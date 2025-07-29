@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat con Socket.IO</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 5px 10px; }
+    input { padding: 10px; width: 80%; }
+    button { padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>💬 Chat en tiempo real</h1>
+  <ul id="messages"></ul>
+  <form id="form">
+    <input id="input" autocomplete="off" placeholder="Escribí tu mensaje..." />
+    <button>Enviar</button>
+  </form>
+
+  <!-- Importar Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Conectar al servidor de Socket.IO
+    const socket = io()
+
+    const form = document.getElementById('form')
+    const input = document.getElementById('input')
+    const messages = document.getElementById('messages')
+
+    // Enviar mensaje al servidor al enviar el formulario
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      if (input.value) {
+        socket.emit('chat message', input.value)
+        input.value = ''
+      }
+    })
+
+    // Escuchar mensajes del servidor y agregarlos a la lista
+    socket.on('chat message', (msg) => {
+      const li = document.createElement('li')
+      li.textContent = msg
+      messages.appendChild(li)
+      window.scrollTo(0, document.body.scrollHeight)
+    })
+  </script>
+</body>
+</html>
