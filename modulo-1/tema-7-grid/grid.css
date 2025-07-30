@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu contenido"
+    "menu sidebar"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px auto auto 50px;
+  gap: 20px;
+  height: 100vh;
+}
+
+.grid__header {
+  grid-area: header;
+  background-color: lightblue;
+}
+
+.grid__menu {
+  grid-area: menu;
+  background-color: lightgray;
+}
+
+.grid__contenido {
+  grid-area: contenido;
+  background-color: white;
+}
+
+.grid__sidebar {
+  grid-area: sidebar;
+  background-color: lightyellow;
+}
+
+.grid__footer {
+  grid-area: footer;
+  background-color: lightgreen;
+}

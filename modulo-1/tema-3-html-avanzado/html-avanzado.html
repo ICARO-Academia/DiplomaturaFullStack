@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ICARO - Innovación y Tecnología">
+  <title>ICARO - Página Web</title>
+</head>
+<body>
+  <header>
+    <h1>ICARO - Innovación y Tecnología</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+  <main>
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+      <p>Ofrecemos soluciones tecnológicas a medida.</p>
+      <ul>
+        <li>Desarrollo de software</li>
+        <li>Consultoría tecnológica</li>
+        <li>Inteligencia Artificial</li>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Desarrollo de software</td>
+            <td>Aplicaciones personalizadas</td>
+            <td>$500</td>
+          </tr>
+          <tr>
+            <td>Consultoría</td>
+            <td>Soluciones estratégicas</td>
+            <td>$200</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <section id="equipo">
+      <h2>Conoce a nuestro equipo</h2>
+      <video src="video-equipo.mp4" controls>
+        Tu navegador no soporta el video.
+      </video>
+    </section>
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="archivo">Currículum:</label>
+        <input type="file" id="archivo" name="archivo" accept=".pdf">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+        <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 ICARO. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
